@@ -10,11 +10,13 @@ app.use(express.json());
 const STATUS_200_OK = 200;
 const STATUS_204_OK = 204;
 
+mysql://b9e00fb32ea2a8:2261ba13@us-cdbr-east-04.cleardb.com/heroku_891e16d9dcd7d8a?reconnect=true
+
 const connection = mysql.createPool({
-	host: 'localhost',
-	user: 'root',
-	password: 'root',
-	database: 'movie_crud_dev',
+	host: 'us-cdbr-east-04.cleardb.com',
+	user: 'b9e00fb32ea2a8',
+	password: '2261ba13',
+	database: 'heroku_891e16d9dcd7d8a',
 });
 
 app.get('/movies/', async (req, res) => {
