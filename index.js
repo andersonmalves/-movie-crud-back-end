@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2/promise');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
@@ -50,7 +51,7 @@ app.delete('/movies/:id', async (req, res) => {
 	res.status(STATUS_200_OK).end();
 });
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`O BACK tá ON na porta ${PORT}`);
